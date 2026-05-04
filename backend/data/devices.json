@@ -1,0 +1,33 @@
+[
+  {
+    "id": 1,
+    "name": "iPhone",
+    "type": "mobile",
+    "mac": ""
+  },
+  {
+    "id": 2,
+    "name": "Gaming Console",
+    "type": "console",
+    "mac": ""
+  },
+  {
+    "id": 3,
+    "name": "Smart TV",
+    "type": "iot",
+    "mac": ""
+  },
+  {
+    "id": 4,
+    "name": "Work Laptop",
+    "type": "computer",
+    "mac": ""
+  },
+  {
+    "id": 5,
+    "name": "52:55:C0:A8:01:64",
+    "type": "unknown",
+    "mac": "52:55:C0:A8:01:64",
+    "ip": "192.168.1.100"
+  }
+]
