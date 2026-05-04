@@ -1,0 +1,18 @@
+services:
+  netsys:
+    build: .
+    container_name: netsys-home
+    ports:
+      - "5000:5000"
+    environment:
+      OPENWRT_HOST: ${OPENWRT_HOST:-192.168.1.1}
+      OPENWRT_PORT: ${OPENWRT_PORT:-80}
+      OPENWRT_USER: ${OPENWRT_USER:-root}
+      OPENWRT_PASS: ${OPENWRT_PASS:-}
+      OPENWRT_TIMEOUT: ${OPENWRT_TIMEOUT:-10}
+      FASTAPI_DEBUG: ${FASTAPI_DEBUG:-0}
+      CORS_ORIGINS: ${CORS_ORIGINS:-http://localhost:5000}
+    env_file:
+      - path: backend/.env
+        required: false
+    restart: unless-stopped

@@ -1,5 +1,28 @@
 # NetSys-Home Changelog
 
+## [1.1.0] — Docker packaging
+
+### Added
+- **`Dockerfile`** — multi-stage build that compiles the React frontend in a
+  Node 20 stage, then drops the static bundle into a Python 3.12-slim runtime
+  with the FastAPI backend. The classifier is trained at build time so the
+  image is fully self-contained.
+- **`docker-compose.yml`** — single-service compose that exposes port 5000
+  and reads optional config from `backend/.env`. Sensible defaults via
+  `${VAR:-default}` so the container starts even without an env file.
+- **`.dockerignore`** — keeps `node_modules`, `.venv`, build artifacts, and
+  the OpenWRT VM image out of the build context.
+- **README "Docker (one command)"** quickstart section.
+
+### Notes
+- The OpenWRT VM still runs separately — Docker-in-QEMU is messy and not
+  worth it for this app's use case. The container points at `OPENWRT_HOST`
+  the same way local dev does.
+- Local dev workflow is unchanged: `python3 app.py` + `npm run dev` still
+  works exactly as before. Docker is purely additive.
+
+---
+
 ## [1.0.0] — Phase 5: Release polish
 
 ### Added

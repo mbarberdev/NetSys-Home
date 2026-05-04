@@ -1,0 +1,25 @@
+# Python
+**/__pycache__
+**/*.pyc
+backend/.venv
+backend/venv
+backend/.env
+backend/classifier/model.pkl
+
+# Node
+**/node_modules
+frontend/dist
+frontend/*.tsbuildinfo
+
+# Git / editor
+.git
+.gitignore
+.vscode
+.idea
+.DS_Store
+
+# Local-only
+.claude/
+*.img
+scripts/
+openwrt-*.img
